@@ -103,7 +103,6 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      font-size: 30px;
       background: none;
       border: none;
       cursor: pointer;
@@ -111,25 +110,38 @@
       line-height: 1;
       transition: transform 0.2s;
       z-index: 10;
+      outline: none;
     }
 
     .star-button:hover {
       transform: scale(1.2);
     }
 
-    .star-button.starred {
-      color: gold;
+    .star-button svg {
+      display: block;
+      fill: #ccc;
+      transition: fill 0.2s;
     }
 
-    .star-button:not(.starred) {
-      color: #ccc;
+    .star-button.starred svg {
+      fill: gold;
     }
 
-    .wisdom-container-wrapper {
-      position: relative;
+    #starred-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 1340px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    .wisdom-container-wrapper .container {
+    #starred-list p {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    .container {
       position: relative;
     }
 
@@ -293,98 +305,84 @@
     
     <div class="AWEpage course-page">
       <h1>Words of Wisdom from Previous AWE-Research Students</h1>
-      <div class="wisdom-container-wrapper">
-        <div class="container">
-          <button class="star-button" onclick="toggleStar(event)">★</button>
-          <div id="question"></div>
-          <div id="wisdom"></div>
-          <div id="student"></div>
-        </div>
+      <div class="container">
+        <button class="star-button" onclick="toggleStar(event)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
+        <div id="question"></div>
+        <div id="wisdom"></div>
+        <div id="student"></div>
+        <button onclick="displayWisdom(aweWisdomData, '.AWEpage')">Click here for another pearl of wisdom</button>
       </div>
-      <button onclick="displayWisdom(aweWisdomData, '.AWEpage')">Click here for another pearl of wisdom</button>
     </div>
 
     <div class="WTETandonpage course-page">
       <h1>Words of Wisdom from Previous WTE-Tandon Students</h1>
-      <div class="wisdom-container-wrapper">
-        <div class="container">
-          <button class="star-button" onclick="toggleStar(event)">★</button>
-          <div id="question"></div>
-          <div id="wisdom"></div>
-          <div id="student"></div>
-        </div>
+      <div class="container">
+        <button class="star-button" onclick="toggleStar(event)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
+        <div id="question"></div>
+        <div id="wisdom"></div>
+        <div id="student"></div>
+        <button onclick="displayWisdom(wteTandonWisdomData, '.WTETandonpage')">Click here for another pearl of wisdom</button>
       </div>
-      <button onclick="displayWisdom(wteTandonWisdomData, '.WTETandonpage')">Click here for another pearl of wisdom</button>
     </div>
 
     <div class="IWW1page course-page">
       <h1>Words of Wisdom from Previous IWW1 Students</h1>
-      <div class="wisdom-container-wrapper">
-        <div class="container">
-          <button class="star-button" onclick="toggleStar(event)">★</button>
-          <div id="question"></div>
-          <div id="wisdom"></div>
-          <div id="student"></div>
-        </div>
+      <div class="container">
+        <button class="star-button" onclick="toggleStar(event)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
+        <div id="question"></div>
+        <div id="wisdom"></div>
+        <div id="student"></div>
+        <button onclick="displayWisdom(iww1WisdomData, '.IWW1page')">Click here for another pearl of wisdom</button>
       </div>
-      <button onclick="displayWisdom(iww1WisdomData, '.IWW1page')">Click here for another pearl of wisdom</button>
     </div>
 
     <div class="IWW2page course-page">
       <h1>Words of Wisdom from Previous IWW2 Students</h1>
-      <div class="wisdom-container-wrapper">
-        <div class="container">
-          <button class="star-button" onclick="toggleStar(event)">★</button>
-          <div id="question"></div>
-          <div id="wisdom"></div>
-          <div id="student"></div>
-        </div>
+      <div class="container">
+        <button class="star-button" onclick="toggleStar(event)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
+        <div id="question"></div>
+        <div id="wisdom"></div>
+        <div id="student"></div>
+        <button onclick="displayWisdom(iww2WisdomData, '.IWW2page')">Click here for another pearl of wisdom</button>
       </div>
-      <button onclick="displayWisdom(iww2WisdomData, '.IWW2page')">Click here for another pearl of wisdom</button>
     </div>
 
     <div class="WTEpage course-page">
       <h1>Words of Wisdom from Previous WTE Students</h1>
-      <div class="wisdom-container-wrapper">
-        <div class="container">
-          <button class="star-button" onclick="toggleStar(event)">★</button>
-          <div id="question"></div>
-          <div id="wisdom"></div>
-          <div id="student"></div>
-        </div>
+      <div class="container">
+        <button class="star-button" onclick="toggleStar(event)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
+        <div id="question"></div>
+        <div id="wisdom"></div>
+        <div id="student"></div>
+        <button onclick="displayWisdom(wteWisdomData, '.WTEpage')">Click here for another pearl of wisdom</button>
       </div>
-      <button onclick="displayWisdom(wteWisdomData, '.WTEpage')">Click here for another pearl of wisdom</button>
     </div>
 
     <div class="ACEpage course-page">
       <h1>Words of Wisdom from Previous ACE Students</h1>
-      <div class="wisdom-container-wrapper">
-        <div class="container">
-          <button class="star-button" onclick="toggleStar(event)">★</button>
-          <div id="question"></div>
-          <div id="wisdom"></div>
-          <div id="student"></div>
-        </div>
+      <div class="container">
+        <button class="star-button" onclick="toggleStar(event)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
+        <div id="question"></div>
+        <div id="wisdom"></div>
+        <div id="student"></div>
+        <button onclick="displayWisdom(aceWisdomData, '.ACEpage')">Click here for another pearl of wisdom</button>
       </div>
-      <button onclick="displayWisdom(aceWisdomData, '.ACEpage')">Click here for another pearl of wisdom</button>
     </div>
 
     <div class="TVDpage course-page">
       <h1>Words of Wisdom from Previous Technology v. Democracy Students</h1>
-      <div class="wisdom-container-wrapper">
-        <div class="container">
-          <button class="star-button" onclick="toggleStar(event)">★</button>
-          <div id="question"></div>
-          <div id="wisdom"></div>
-          <div id="student"></div>
-        </div>
+      <div class="container">
+        <button class="star-button" onclick="toggleStar(event)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
+        <div id="question"></div>
+        <div id="wisdom"></div>
+        <div id="student"></div>
+        <button onclick="displayWisdom(tvdWisdomData, '.TVDpage')">Click here for another pearl of wisdom</button>
       </div>
-      <button onclick="displayWisdom(tvdWisdomData, '.TVDpage')">Click here for another pearl of wisdom</button>
     </div>
 
     <div class="Starredpage course-page">
       <h1>Your Starred Favorites</h1>
-      <div id="starred-list" class="container">
+      <div id="starred-list">
         <p>You haven't starred any favorites yet. Click the star on any wisdom to save it here!</p>
       </div>
     </div>
@@ -2633,6 +2631,326 @@ question: "How have your expectations or understanding of the course changed ove
 response: "Originally, I came into the class thinking it would follow a typical writing course's focus on the standard writing skills like analysis of texts, but the course actually largely targets on spreading scientific knowledge. Even if writing isn't your favorite subject, the unique goal of trying to communicate science to others makes this course pretty interesting in a refreshing and insightful way.",
 student: "Sophia Huang"
 },
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "Motivation, honestly. My other classes are really cool, so I had a lot of drive to go do them, but I just couldn't find that for expos. I got a lot of help from my peers to hold me accountable for actually doing my work, though.",
+student: "Varun"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Go write some shit. The only way you'll actually improve is by doing it, so go write a journal or a paper or a blog post. It doesn't really matter, as long as you're getting words down. Do it.",
+student: "Varun"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "I've actually been able to apply a lot of stuff from last semester to my writing for this class. I would say my representation of evidence has been very useful, and I've definitely improved on that front.",
+student: "Varun"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "It really hasn't, to be honest. I got what I saw on the tin.",
+student: "Varun"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "The most difficult challenge I faced in this class was the collaboration aspect, specifically the research paper. Personally I don't like working with other people as it requires me to work around their schedule which leaves me without full control. I worked through it by a process of proper communication with my group mates, making sure everything was done on time and done well.",
+student: "Yaman"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "My only guidance is that AWE is what you make of it. Obviously people in engineering are in that field because they enjoy engineering, not writing, but this course provides valuable skills that most will use throughout the rest of their careers. Therefore, putting in more effort will only benefit you further on.",
+student: "Yaman"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "My writing process used to be super rigid, I would sit down for many many hours and finish an essay all in one go. Now I create outlines that I use which allows me to spread out my work across multiple sessions rather than one so I don't get burnt out as easily anymore.",
+student: "Yaman"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "I came into this class thinking it would just be a required class that I need to get an A in, that it wouldn't contribute to my writing abilities. Now looking back, my views definitely shifted throughout the semester as I took many extra steps in pursuit of improving my writing skills.",
+student: "Yaman"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "I think the most difficult moments I had in this class was definitely writing the projects. I ultimately found that the most effective way for me to write is to write a few quick drafts but once the drafts become better I slow down and do more miticulous editing. Sometimes I find that printing the paper helps alot.",
+student: "Larry"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Sign up for the writing tutor program!!!",
+student: "Larry"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "I think I have started to really slow down when I edit my writing, especially emphasizing the transitions between sentences. I never really looked into this before until now and I feel that it definitely makes a very big difference when you focus on how you transition ideas from one sentence to the next.",
+student: "Larry"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "I think my expectations for this class has not changed.",
+student: "Larry"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "I think the biggest challenge was the research project since we had very little turnaround time from actually figuring out how we want to structure our research, actually conduct it, and then to put it onto paper. But I think an important thing that my group did is to communicate with Professor Landfair, get feedback from other teams, and to work effectively together.",
+student: "Bhavya"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "I would advise students to actually put in effort into the Exercises since they are structured to improve your writing and final projects gradually over time. This makes revising a lot easier and less overwhelming.",
+student: "Bhavya"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "I've learned to space out my writing and let it have space. Previously, I used to procrastinate most of my essays but due to the way this class structured its work, I was pushed to write multiple drafts, revise, and give space to it. In the time frame, I realized how important a fresh perspective is for improving my writing quality and I plan to implement this writing work flow in future classes.",
+student: "Bhavya"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "I think I was able to better my understanding and skillset overall when it came to technical writing. My previous experiences with writing have usually been creative and personal rather than from a science based view, so I thought this was really refreshing. I think I was able to better my understanding of how to better edit, review, and the best ways to give feedback.",
+student: "Bhavya"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "The second project, working in a group, was the most difficult. It was hard to adjust to each others' writing styles to create a cohesive and coherent piece of writing. It was also difficult to properly fraction out the writing, since the end result would often turn out disconnected. I am not yet sure what the solution to this is, but I think it was an important experience that taught me how to work in a group.",
+student: "Jiwon"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Don't be afraid to ask your friends or classmates for feedback on your writing. They can often provide a different perspective that you haven't considered. This will help you both improve your writing and make the process more fun.",
+student: "Jiwon"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "I have started applying cohesion and coherence to my writing process. This allows me to ensure that my writing does not sound \"disconnected\" or \"jumpy.\" I have also started utilizing peer-review feedback more often. I found it valuable to have a third person give their opinion.",
+student: "Jiwon"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "I thought this course would provide specific skills for writing for STEM students. However, throughout the semester I realized that this course actually provides a much more foundational writing framework, STEM or Non-STEM. The skills I have gained from the class has both made me a better writer at research papers, but also personal statements. This wide variety was not something I was expecting.",
+student: "Jiwon"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "I think the most difficult challenge was meeting up with my groupmates haha, we all have such different schedules. We made do with online meetings, and I think our final product was a success.",
+student: "Stanley"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "This doesn't just apply to AWE but I think to all classes, but take time management seriously! A good majority of my academic stress came from rushing for last minute assignments.",
+student: "Stanley"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "I think for sure I will ask my friends/classmates for feedback more often, I found myself getting better at giving feedback as well.",
+student: "Stanley"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "At first, I didn't know what to expect from the \"research\" part of \"advanced writing for engineers: research\". Very different from other writing classes I've taken, so I was a little bit scared? But I think Landfair does a really good job of easing you into getting comfortable reading/writing science research articles.",
+student: "Stanley"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "I had a hard time organizing my essays and expressing my thoughts accurately. I began turning to peer-review and feedback more often to get a sense of how a reader would feel when they read my essay.",
+student: "Dhrishit"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Begin your writing assignments in advance so you have enough time to reflect upon them and give them a chance to evolve.",
+student: "Dhrishit"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "Before beginning to write, I have begun to spend more time planning and writing down my thoughts before putting any final essay together. I have also started practicing \"distancing\" as it helps me reflect better upon my own work.",
+student: "Dhrishit"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "My thinking has become broader. I used to feel the course was just about improving writing skills, but over time I have realized it is much more than that - the course teaches us how to convey our thoughts effectively across different contexts for a range of audiences, while fulfilling any possible formal requirements.",
+student: "Dhrishit"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "The most difficult challenge was writing the research paper for Progression 2. It took some trial and error to understand how much or little I should write to get the methods and conclusions of the experiment across without them being half-baked, or too wordy and complex to understand.",
+student: "Nicole"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Make the most out of how much this class prepares you for the future. I had the opportunity to research and write about professors and previous research on topics I was interested in, and as a result, I grew to love my major and the field I want to go into so much more. TL;DR: Use the opportunities from this class wisely and you'll love your major even more.",
+student: "Nicole"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "My writing process has always incorporated a lot of revising and restructuring of my work. This semester I was really able to improve those skills and become better at revising. I now also have the lesson of transfer to be able to think about and apply to my writing, which is something I was not aware of before this class. I also consider the audience I am writing for more than ever. Different kinds of writing have different audiences (popularizer vs. research paper), and it is important to know how much you need to explain or omit for each.",
+student: "Nicole"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "I was not expecting the class's goals and values to be so future-oriented. While I knew the class would be about conducting research and writing papers, I was not expecting the level of care that was put into preparing us for the future by getting us accustomed to different kinds of writing like popularizers and personal statements. As a result, I now feel much more prepared to write in these forms in the future, as well as do the necessary research needed for them.",
+student: "Nicole"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "Trying to figure out the best way to carry out the experiment for the research paper project. There were so many variables and methods to consider and choose between. Talking it over with my team partner and locking in together for late night writing sessions helped a lot.",
+student: "Emma"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Try not to leave things until the last minute...",
+student: "Emma"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "I have learned a lot more about research and how to break down a piece of writing into manageable pieces, and how to go about turning science into writing.",
+student: "Emma"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "I realized that this class focused more on your approach to and view of writing, and learning how to improve your writing process, than just doing a bunch of writing assignments and busywork.",
+student: "Emma"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "Organizing and architecting a research paper was a little difficult because it took a lot of prior research of analyzing published papers so myself and our group could have a good understanding of how to construct and write about research well. (Skills which we are still developing a strength for.)",
+student: "Dante"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Make sure to begin projects ahead of time because you may be surprised by the amount of background info you will have to acquire. Also make sure to pass drafts by the professor before the final submission because that will definitely point you in the right direction for where to take your writing.",
+student: "Dante"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "The number of sources read before writing the piece itself has definitely gone up.",
+student: "Dante"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "I originally thought the class would spend a lot of time on formatting for writing down research and specific conventions for portraying research, and while there was definitely some time devoted to an overview of the writing format, that was not the entirety of the course.",
+student: "Dante"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "The hardest challenge was developing a research topic/methodology for the second project. I worked on this by looking at the work of past researchers and seeing how my project/methodology can be inspired by theirs.",
+student: "Arushi"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Complete the exercises of each project well as they will help in setting you up for a good final paper.",
+student: "Arushi"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "I think one important writing skill I've added is understanding how to translate scientific writing into writing easily understood by others. As an aspiring researcher, this writing skill will be useful for sharing my work with the public, which is something I definitely plan to do. In terms of writing process I've built a lot of skills in peer-reviewing. It has helped me analyze the rubric better and work on fixing my writing as well.",
+student: "Arushi"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "I came into this class thinking about what it was like to write a research paper, and build the skills to write a good one. However, throughout the course I realized the class also focused on what it was like to think like a researcher/scientist. For the popularizer, it was important to think like the scientist whose research I was writing about to know what information was important to share with the public. The research paper definitely forced me to handle many obstacles that researchers face when developing their question, making a methodology, gathering data, etc. Lastly the personal statement for the NSF GRFP made me think about how scientists present their work to other scientists and share their accomplishments for grants and awards. Overall, I realized the class was not only about writing scientific papers but also thinking like a scientist and how that informs the writing.",
+student: "Arushi"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "Organizing the research project posed to be challenging. I think what helped a lot for that was having one or two sources that were similar to what I was writing about and following their organization guide and how they completed their IMRAD sections.",
+student: "Faiza"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Start early and go to office hours or meet with professor when stuck. Make more than one draft. Write first, organize later. Talk to your peers -- they can be really helpful as well.",
+student: "Faiza"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "I've started creating more drafts for an assignment rather than just writing one and editing off of that, and I've also started listing out my ideas as they come. Starting these assignments earlier is always helpful.",
+student: "Faiza"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "Originally, I thought the class's goal was to simply fulfill a requirement needed for my degree. Later I found this class to be helpful in writing complex ideas as a storyline that was understandable and digestible to other readers.",
+student: "Faiza"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "Time management as a team was definitely the most difficult challenge this semester. When working alone, it is much easier to manage my own time and figure out when I can block out a few hours to work on an assignment. However, to allow everyone in a group to contribute, it was very difficult to work around everyone's schedules and ensure that everyone had a say in the project without one person completing the entire assignment. We worked through this by creating specific deliverables for every individual before we came together and combined them, then checking for continuity errors. While this technique worked fairly well, one issue is that there will inevitably be many continuity errors, as no matter how strong the communication is between members, there will always be some ideas that aren't discussed and each individual ends up creating their own take of the situation.",
+student: "Tobias"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "When working in a group (for the research paper project), make sure to block out more time than expected for the assignment to be completed. This is because factors out of your control change and others may not be willing to sacrifice as much to remedy these issues.",
+student: "Tobias"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "Something I added to my writing process this semester was the conscious effort to prioritize coherence and cohesion in my writing. Previously, I would rely on my own intuition and \"feelings\" when it came to writing an essay that had a logical progression and followed a common theme throughout. However, after I learned formally what coherence and cohesion meant, I was able to incorporate these techniques into my writing at a much higher level. I now consciously identify and aim to write in a way that uses these techniques rather than just editing my essay until it finally \"sounded right.\"",
+student: "Tobias"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "At the beginning of the semester, I assumed that this class would be like any one of my high school English classes where we learned grammar rules and studied texts, just in the context of research papers. However, over the course of the semester as I got a chance to write my own research paper and other essays related to something I, as an aspiring researcher, would eventually be asked to write, I began to see the true value of this course and I became much more appreciative of the content that we were learning.",
+student: "Tobias"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "The most difficult challenge I overcame was using revision as an excuse for procrastination. Peer reviews helped with this, but I've also found that just starting with a small change is enough to push me to continue pushing.",
+student: "Sophia Wang"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Start your writing assignments early, it gives you the room to procrastinate and still take out a great piece of work.",
+student: "Sophia Wang"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "I'd like to think I've become more willing to put thought to paper. Knowing that my revision process involves cutting down and refining, I don't hesitate to type my raw thoughts down.",
+student: "Sophia Wang"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "My initial expectations were that this class would involve a strenuous amount of academic reading and individual work as a student trying to become a researcher. In class, however, we explored multiple different aspects around being a researcher. From considering post-research, to doing research ourselves, and then moving to pre-research personal statements. Throughout, peers would support each other through discussion, cooperation, and helping each other revise.",
+student: "Sophia Wang"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "The most difficult challenge is probably when I initially had to find and read a research article for my science popularizer assignment at the beginning of the semester. It was my first time trying to actually read such a complicated paper and it reminded me of Shakespeare in 9th grade. However as time went on and I was able to extract its main ideas bit by bit, I was able to understand it. It was gratifying I was able to parse such a complicated genre of text without methods like Sparknotes in high school.",
+student: "Mark"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Start your work early and keep thinking about your writing pieces even if you're not physically writing any words. The worst feeling is when the deadline is tomorrow and you have no idea what you want to write about.",
+student: "Mark"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "I certainly learned the structure, style, and ways to write a research paper. I also learned how to make research papers engaging for everyone to read through, by restructuring pieces of the original research paper, for example, in the science popularizer assignment.",
+student: "Mark"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "The course made me realize that research articles are much more than sharing the methods to my grand experiments. The science popularizer assignment made me realize that research papers aren't only read by specialized scientists in a field. Everyone should learn about what great advancements science constantly goes through and most of the time, the public takes interest in science as well. This is supported by my participation in the Pathway to Symposium, where I learned a lot from panelists sharing their personal stories tied with research questions in fields that are totally different from my own.",
+student: "Mark"
+},
+{
+question: "What was the most difficult challenge you faced in this class?",
+response: "For the personal statement project, going forward in time to my future PhD days and looking back in time from there to the present today... yeah, that was a challenge. It could have been just an exercise in wishful thinking, but I guess I looked at it as a prospective blueprint aligning with my real goals. It's a living document now, and time will tell how well I did.",
+student: "Snigdha"
+},
+{
+question: "What guidance can you offer future AWE students?",
+response: "Goof around and regret!",
+student: "Snigdha"
+},
+{
+question: "What have you added to your writing process this semester? In what ways has it changed?",
+response: "The one thing that comes to mind above all else is accessibility. To me, the popularizer article was more about accessibility, and it's a skill that I've started applying to my writing this semester.",
+student: "Snigdha"
+},
+{
+question: "How have your expectations or understanding of the course changed over the course of the semester?",
+response: "I started the course knowing that it would be about writing research, and the types of projects that we would engage in, but I didn't realize then how connected these projects are to my very own future. I am glad that I took the course seriously enough to see that it is as much about my own goals as it is about scientific writing.",
+student: "Snigdha"
+},
 
 ];
 
@@ -2646,7 +2964,7 @@ function displayWisdom(wisdomData, containerSelector) {
   container.querySelector("#student").textContent = selectedWisdom.student.split(" ")[0];
 
   // Store current wisdom data on the container for star functionality
-  const wisdomContainer = container.closest('.course-page').querySelector('.wisdom-container-wrapper .container');
+  const wisdomContainer = container.closest('.course-page').querySelector('.container');
   if (wisdomContainer) {
     wisdomContainer.dataset.currentWisdom = JSON.stringify(selectedWisdom);
   }
@@ -2677,7 +2995,7 @@ function isWisdomStarred(wisdom) {
 }
 
 function updateStarState(container) {
-  const wisdomContainer = container.closest('.course-page').querySelector('.wisdom-container-wrapper .container');
+  const wisdomContainer = container.closest('.course-page').querySelector('.container');
   const starButton = container.closest('.course-page').querySelector('.star-button');
 
   if (wisdomContainer && wisdomContainer.dataset.currentWisdom && starButton) {
@@ -2692,9 +3010,9 @@ function updateStarState(container) {
 
 function toggleStar(event) {
   event.preventDefault();
-  const starButton = event.target;
+  const starButton = event.currentTarget;
   const coursePage = starButton.closest('.course-page');
-  const wisdomContainer = coursePage.querySelector('.wisdom-container-wrapper .container');
+  const wisdomContainer = coursePage.querySelector('.container');
 
   if (!wisdomContainer || !wisdomContainer.dataset.currentWisdom) {
     return;
@@ -2728,13 +3046,11 @@ function displayStarredFavorites() {
     let html = '';
     favorites.forEach((wisdom, index) => {
       html += `
-        <div class="wisdom-container-wrapper" style="margin-bottom: 30px; position: relative;">
-          <button class="star-button starred" onclick="removeStarredItem(${index})">★</button>
-          <div class="container" style="margin: 0;">
+        <div class="container" style="position: relative;">
+          <button class="star-button starred" onclick="removeStarredItem(${index})"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
             <div style="margin-top: 30px; font-size: 20px; font-weight: bold; min-height: 50px; text-align: center;">${wisdom.question}</div>
             <div style="margin-top: 20px; font-size: 20px; min-height: 80px; text-align: left; width: 90%; color: blue; margin-left: auto; margin-right: auto; font-family: 'Shadows Into Light', cursive;">${wisdom.response}</div>
             <div style="margin-top: 25px; font-size: 18px; font-style: italic;">${wisdom.student.split(" ")[0]}</div>
-          </div>
         </div>
       `;
     });
